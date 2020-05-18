@@ -1,0 +1,25 @@
+body {
+font-family: 'Yu Gothic UI','ヒラギノ角ゴシック','Hiragino Sans','Osaka','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+}
+
+input{
+    /* 文字サイズ指定 */
+    font-size: 14px;
+    color: #555;
+    padding: 0px;
+    height: 40px;
+    grid-area: result;
+    width: 95%;
+    /* 背景色指定 */
+    border: 1px solid #ccc
+    /* background-color:#FFF */
+}
+input[disabled]{
+    color:#DDDDDD;
+     /* 禁止カーソル（キャンセル） */
+    /* cursor:not-allowed; */
+}
+h1{
+  font-size: 16px;
+}
+div { text-align : center ; }
