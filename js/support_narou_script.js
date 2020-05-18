@@ -1,20 +1,22 @@
 //みてみんページからurlの切り出し
 $(function(){
     var str = $("#mainContent2").text();  //テキストで取得
-    console.log(str);//For debugging
+    //console.log(str);//For debugging
 
     var url_head = str.indexOf('https://');
-    console.log(url_head);
+    //console.log(url_head);
 
     imgID = str.substr(-9,7)//画像ID
-    console.log(imgID);
+    //console.log(imgID);
 
     var pre_userID =str.slice(url_head+8)
-    console.log(pre_userID);
+    //console.log(pre_userID);
+    
     var cut = pre_userID.indexOf('.mitemin');
-    console.log(cut);
+    //console.log(cut);
+    
     userID = pre_userID.slice(0,cut)
-    console.log(userID);//ユーザーID
+    //console.log(userID);//ユーザーID
 
 });
 
