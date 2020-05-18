@@ -2,16 +2,13 @@
 // data-id が１つしかないものを抽出する
 $(function(){
 
-    var array = [];
+    let array = [];
 
     //data-diをリストに追加
     $("div.comment_set").each(function(index, element){
-      //console.log(index);
       result =  $(element).data('id');
       array.unshift(result);
     });
-
-    //console.log(array);
 
     // 重複がないdata-idリストを作成
     const getUniqueValues = ([...array]) => {
@@ -19,21 +16,18 @@ $(function(){
     }
 
     array = getUniqueValues(array);
-    // console.log(getUniqueValues(array));
 
     // 重複しないdate-idを持つdivを色付け
     $("div.comment_set").each(function(index, element){
       if (array.includes($(element).data('id'))) {
         $(element).addClass("border");
-        //console.log($(element).data('id'));
       }
     });
 
-    // 未返信感想のハイライト
+    // 未返信感想有無表示
     if (array.length != 0) {
-      console.log(array.length);
-      var non_reply_num_str = "<p align='right'><font size='3' color='#808080'><br>未返信感想あり</font></p>"
-      $('#section_comment > div > div.move_set.clearfix').after(non_reply_num_str);
+        const non_reply_num_str = "<p align='right'><font size='3' color='#808080'><br>未返信感想あり</font></p>"
+        $('#section_comment > div > div.move_set.clearfix').after(non_reply_num_str);
     }
 });
 
@@ -48,7 +42,6 @@ $(function(){
 
     const user_data_url = "https://mirunovel.com/n_log/user/?id=" + userid;
     const user_page_html_tag = "　(" + "<a target='_blank' href='" + user_data_url + "'>" + "作者分析ページ</a>" + ")"
-    //console.log(user_page_html_tag);
 
     //class要素を取得する
     $('#section_works_info > div.content_inner > div.novel_author > p').append(user_page_html_tag);
