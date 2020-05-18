@@ -1,4 +1,4 @@
-// 未返信コメントのハイライト機能
+// div data-idを取得
 // data-id が１つしかないものを抽出する
 $(function(){
 
@@ -28,7 +28,15 @@ $(function(){
         //console.log($(element).data('id'));
       }
     });
+
+    // 未返信感想のハイライト
+    if (array.length != 0) {
+      console.log(array.length);
+      var non_reply_num_str = "<p align='right'><font size='3' color='#808080'><br>未返信感想あり</font></p>"
+      $('#section_comment > div > div.move_set.clearfix').after(non_reply_num_str);
+    }
 });
+
 
 
 // 作者エゴサボタン追加
