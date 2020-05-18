@@ -1,4 +1,4 @@
-// div data-idを取得
+// 未返信コメントのハイライト機能
 // data-id が１つしかないものを抽出する
 $(function(){
 
@@ -28,4 +28,21 @@ $(function(){
         //console.log($(element).data('id'));
       }
     });
+});
+
+
+// 作者エゴサボタン追加
+$(function(){
+
+    //作者ID抽出
+    let userid = $("div.novel_author > p > a").attr('href');
+    userid = userid.replace(/[^0-9]/g, '');
+
+    const user_data_url = "https://mirunovel.com/n_log/user/?id=" + userid;
+    const user_page_html_tag = "　(" + "<a target='_blank' href='" + user_data_url + "'>" + "作者分析ページ</a>" + ")"
+    //console.log(user_page_html_tag);
+
+    //class要素を取得する
+    $('#section_works_info > div.content_inner > div.novel_author > p').append(user_page_html_tag);
+
 });
